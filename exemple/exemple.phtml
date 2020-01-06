@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<main>
+		<form action="remove.php" method="post">
+			<table border>
+				<tr>
+					<th>Id</th>
+					<th>Nom</th>
+					<th>Niveau</th>
+					<th></th>
+				</tr>
+				<?php foreach($liste as $ligne) :?>
+					<tr>
+						<td><?=$ligne[0]?></td>
+						<td><?=$ligne[1]?></td>
+						<td><?=$ligne[2]?></td>
+						<td><input type="checkbox" name="id[]" value="<?=$ligne[0]?>"></td>
+					</tr>
+				<?php endforeach;?>
+			</table>	
+			<button type="submit">Supprimer</button>
+		</form>
+		<form action="add.php" method="post">
+			<label>id</label>
+			<input type="text" name="id"><br>
+			<label>Nom</label>
+			<input type="text" name="nom"><br>
+			<label>debutant</label>
+			<input type="radio" name="niveau" value="debutant"><br>
+			<label>confirmé</label>
+			<input type="radio" name="niveau" value="confirmé"><br>
+			<label>expert</label>
+			<input type="radio" name="niveau" value="expert"><br>
+			<button type="submit">Enregistre</button>
+		</form>
+	</main>
+</body>
+</html>
